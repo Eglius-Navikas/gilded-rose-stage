@@ -25,10 +25,10 @@ class GildedRose {
     }
 
     public void updateQuality() {
-        for (int i = 0; i < items.length; i++) {
+        for (Item item : items) {
             for (ItemUpdateHandler handler : updateHandlerList) {
-                if (handler.conformsToType(items[i])) {
-                    handler.handleUpdate(items[i]);
+                if (handler.conformsToType(item)) {
+                    handler.handleUpdate(item);
                     break;
                 }
             }
