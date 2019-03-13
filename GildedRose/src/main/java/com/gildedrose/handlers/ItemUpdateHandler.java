@@ -1,6 +1,6 @@
 package com.gildedrose.handlers;
 
-import com.gildedrose.Item;
+import com.gildedrose.model.Item;
 
 public interface ItemUpdateHandler {
 

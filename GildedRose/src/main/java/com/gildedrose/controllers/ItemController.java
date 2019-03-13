@@ -1,6 +1,6 @@
 package com.gildedrose.controllers;
 
-import com.gildedrose.Item;
+import com.gildedrose.model.Item;
 import com.gildedrose.services.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,7 +1,7 @@
 package com.gildedrose.services;
 
 import com.gildedrose.GildedRose;
-import com.gildedrose.Item;
+import com.gildedrose.model.Item;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;

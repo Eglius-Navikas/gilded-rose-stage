@@ -1,6 +1,8 @@
 package com.gildedrose;
 
 import com.gildedrose.handlers.*;
+import com.gildedrose.model.Item;
+import org.springframework.scheduling.annotation.Async;
 
 import java.util.ArrayList;
 import java.util.List;
