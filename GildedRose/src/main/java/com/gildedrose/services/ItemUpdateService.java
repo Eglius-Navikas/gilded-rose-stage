@@ -1,18 +1,18 @@
-package com.gildedrose;
+package com.gildedrose.services;
 
 import com.gildedrose.handlers.*;
 import com.gildedrose.model.Item;
-import org.springframework.scheduling.annotation.Async;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GildedRose {
-    Item[] items;
+@Service
+public class ItemUpdateService {
+
     private List<ItemUpdateHandler> updateHandlerList;
 
-    public GildedRose(Item[] items) {
-        this.items = items;
+    public ItemUpdateService() {
         this.updateHandlerList = new ArrayList<>();
         populateHandlerList();
     }
@@ -23,22 +23,15 @@ public class GildedRose {
         this.updateHandlerList.add(new BackstagePassesUpdateHandler());
         this.updateHandlerList.add(new ConjuredItemUpdateHandler());
 
-        //has to be last
         this.updateHandlerList.add(new DefaultItemUpdateHandler());
     }
 
-    public void updateQuality() {
-        for (Item item : items) {
-            for (ItemUpdateHandler handler : updateHandlerList) {
-                if (handler.conformsToType(item)) {
-                    handler.handleUpdate(item);
-                    break;
-                }
+    void updateItem(Item item) {
+        for (ItemUpdateHandler handler : updateHandlerList) {
+            if (handler.conformsToType(item)) {
+                handler.handleUpdate(item);
+                break;
             }
         }
-    }
-
-    public Item[] getItems() {
-        return this.items;
     }
 }
