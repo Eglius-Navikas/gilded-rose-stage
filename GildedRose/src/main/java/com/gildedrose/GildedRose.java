@@ -5,7 +5,7 @@ import com.gildedrose.handlers.*;
 import java.util.ArrayList;
 import java.util.List;
 
-class GildedRose {
+public class GildedRose {
     Item[] items;
     private List<ItemUpdateHandler> updateHandlerList;
 
@@ -34,5 +34,9 @@ class GildedRose {
                 }
             }
         }
+    }
+
+    public Item[] getItems() {
+        return this.items;
     }
 }
