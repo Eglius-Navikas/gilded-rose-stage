@@ -11,7 +11,7 @@ public class BackstagePassesUpdateHandler implements ItemUpdateHandler {
 
     @Override
     public boolean conformsToType(Item item) {
-        return item.name.contains("Backstage passes");
+        return item.name.equals("Backstage passes to a TAFKAL80ETC concert");
     }
 
     @Override
