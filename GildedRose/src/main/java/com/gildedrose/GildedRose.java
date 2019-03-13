@@ -19,6 +19,7 @@ class GildedRose {
         this.updateHandlerList.add(new AgedBrieUpdateHandler());
         this.updateHandlerList.add(new SulfurasUpdateHandler());
         this.updateHandlerList.add(new BackstagePassesUpdateHandler());
+        this.updateHandlerList.add(new ConjuredItemUpdateHandler());
 
         //has to be last
         this.updateHandlerList.add(new DefaultItemUpdateHandler());
