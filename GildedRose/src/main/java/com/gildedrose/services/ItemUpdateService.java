@@ -26,7 +26,7 @@ public class ItemUpdateService {
         this.updateHandlerList.add(new DefaultItemUpdateHandler());
     }
 
-    void updateItem(Item item) {
+    public void updateItem(Item item) {
         for (ItemUpdateHandler handler : updateHandlerList) {
             if (handler.conformsToType(item)) {
                 handler.handleUpdate(item);

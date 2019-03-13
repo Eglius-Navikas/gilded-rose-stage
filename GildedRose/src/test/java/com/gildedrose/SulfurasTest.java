@@ -13,13 +13,12 @@ public class SulfurasTest {
 
     @Test
     public void sulfurasQualityNeverAlters() {
-        Item[] items = new Item[]{new Item("Sulfuras, Hand of Ragnaros", 10, 80),
-                new Item("Sulfuras, Hand of Ragnaros", -1, 80)
-        };
-        InventoryService inventoryService = new InventoryService(itemUpdateService, items);
-        inventoryService.updateQuality();
-        assertEquals(80, inventoryService.getItems().get(0).quality);
-        assertEquals(80, inventoryService.getItems().get(1).quality);
+        Item item = new Item("Sulfuras, Hand of Ragnaros", 10, 80);
+        Item item2 = new Item("Sulfuras, Hand of Ragnaros", -1, 80);
+        itemUpdateService.updateItem(item);
+        itemUpdateService.updateItem(item2);
+        assertEquals(80, item.quality);
+        assertEquals(80, item2.quality);
     }
 
 }

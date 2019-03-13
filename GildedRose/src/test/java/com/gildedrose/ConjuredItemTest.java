@@ -15,30 +15,25 @@ public class ConjuredItemTest {
 
     @Test
     public void conjuredItemLosesQualityTwiceAsFastAsNormalDaily() {
-        Item[] items = new Item[]{new Item("foo", 10, 10),
-                new Item("Conjured Sweetroll", 10, 10)
-        };
-        InventoryService inventoryService = new InventoryService(itemUpdateService, items);
-        inventoryService.updateQuality();
-        assertEquals(9, inventoryService.getItems().get(0).quality);
-        assertEquals(8, inventoryService.getItems().get(1).quality);
+        Item item = new Item("foo", 10, 10);
+        itemUpdateService.updateItem(item);
+        Item item2 = new Item("Conjured Sweetroll", 10, 10);
+        itemUpdateService.updateItem(item2);
+        assertEquals(9, item.quality);
+        assertEquals(8, item2.quality);
     }
 
     @Test
     public void conjuredItemPastExpirationLosesQualityTwiceAsFast() {
-        Item[] items = new Item[]{new Item("Conjured Bananapie", 0, 10)};
-        InventoryService inventoryService = new InventoryService(itemUpdateService, items);
-        inventoryService.updateQuality();
-        assertEquals(6, inventoryService.getItems().get(0).quality);
+        Item item = new Item("Conjured Bananapie", 0, 10);
+        itemUpdateService.updateItem(item);
+        assertEquals(6, item.quality);
     }
 
     @Test
     public void qualityOfAConjuredItemDoesNotDegradeIntoNegative() {
-        Item[] items = new Item[]{
-                new Item("Conjured Replica of Thunderfury, Blessed Blade of the Windseeker", 10, 0)
-        };
-        InventoryService inventoryService = new InventoryService(itemUpdateService, items);
-        inventoryService.updateQuality();
-        assertEquals(0, inventoryService.getItems().get(0).quality);
+        Item item = new Item("Conjured Replica of Thunderfury, Blessed Blade of the Windseeker", 10, 0);
+        itemUpdateService.updateItem(item);
+        assertEquals(0, item.quality);
     }
 }

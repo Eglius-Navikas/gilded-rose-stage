@@ -13,10 +13,9 @@ public class GildedRoseTest {
 
     @Test
     public void foo() {
-        Item[] items = new Item[]{new Item("foo", 0, 0)};
-        InventoryService inventoryService = new InventoryService(itemUpdateService, items);
-        inventoryService.updateQuality();
-        assertEquals("foo", inventoryService.getItems().get(0).name);
+        Item item = new Item("Foo", 10, 10);
+        itemUpdateService.updateItem(item);
+        assertEquals("Foo", item.name);
     }
 
 }
