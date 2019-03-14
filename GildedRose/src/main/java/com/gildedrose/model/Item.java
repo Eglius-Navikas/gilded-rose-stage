@@ -1,9 +1,11 @@
 package com.gildedrose.model;
 
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 @Document(indexName = "gildedrose", type = "item")
+@NoArgsConstructor
 public class Item {
 
     @Id
