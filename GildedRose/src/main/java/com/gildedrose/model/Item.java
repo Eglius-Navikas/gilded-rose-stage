@@ -7,7 +7,7 @@ import org.springframework.data.elasticsearch.annotations.Document;
 public class Item {
 
     @Id
-    public long id;
+    public String id;
 
     public String name;
 
@@ -21,8 +21,8 @@ public class Item {
         this.quality = quality;
     }
 
-   @Override
-   public String toString() {
+    @Override
+    public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
     }
 }
