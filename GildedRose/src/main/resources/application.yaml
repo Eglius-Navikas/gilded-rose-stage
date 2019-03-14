@@ -1,4 +1,12 @@
-elasticsearch:
-  clustername: elasticsearch
-  host: localhost
-  port: 9300
+spring:
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: localhost:9300
+      repositories:
+        enabled: true
+      properties:
+        path:
+          home: target/elastic-embedded
+server:
+  port: 8081

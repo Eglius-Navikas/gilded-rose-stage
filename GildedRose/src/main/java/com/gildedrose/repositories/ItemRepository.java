@@ -10,5 +10,4 @@ import java.util.List;
 public interface ItemRepository extends ElasticsearchRepository<Item, String> {
 
     List<Item> findAll();
-    void saveAll(List<Item> items);
 }
