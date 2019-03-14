@@ -1,6 +1,13 @@
 package com.gildedrose.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.Document;
+
+@Document(indexName = "gildedrose", type = "item")
 public class Item {
+
+    @Id
+    public long id;
 
     public String name;
 
